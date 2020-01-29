@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/atirum-queenbed.jpg</file>
+        <file>images/atrium-kingbath.jpg</file>
+        <file>images/atrium-kingbed.jpg</file>
+        <file>images/atrium-queenbath.jpg</file>
+        <file>images/standard-kingbath.jpg</file>
+        <file>images/standard-kingbed.jpg</file>
+        <file>images/standard-queenbath.jpg</file>
+        <file>images/standard-queenbed.jpg</file>
+        <file>images/american.png</file>
+        <file>images/button_back(1).png</file>
+        <file>images/button_confirm-pay(1).png</file>
+        <file>images/button_exit(1).png</file>
+        <file>images/button_next(1).png</file>
+        <file>images/discover.png</file>
+        <file>images/master.png</file>
+        <file>images/visa.png</file>
+        <file>images/arrow.jpg</file>
+        <file>images/arrow1.jpg</file>
+        <file>images/60775.png</file>
+        <file>images/img_71732.png</file>
+    </qresource>
+</RCC>
