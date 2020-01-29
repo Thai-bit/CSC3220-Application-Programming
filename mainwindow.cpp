@@ -40,7 +40,7 @@ MainWindow::~MainWindow()
 
 
 
-
+// condition for standard queen room
 void MainWindow::on_sQueenRadioButton_clicked()
 {
     imageInput();
@@ -56,7 +56,7 @@ void MainWindow::on_sQueenRadioButton_clicked()
     CurrentChoice();
 }
 
-
+// condition for standard king room
 void MainWindow::on_sKingRadioButton_clicked()
 {
     imageInput();
@@ -73,7 +73,7 @@ void MainWindow::on_sKingRadioButton_clicked()
 }
 
 
-
+// condition for atrium queen room
 void MainWindow::on_aQueenRadioButton_clicked()
 {
     imageInput();
@@ -89,6 +89,7 @@ void MainWindow::on_aQueenRadioButton_clicked()
     CurrentChoice();
 }
 
+//  contion for atrium bed room
 void MainWindow::on_aKingRadioButton_clicked()
 {
     imageInput();
@@ -104,6 +105,7 @@ void MainWindow::on_aKingRadioButton_clicked()
     CurrentChoice();
 }
 
+// right arrow to switch picture
 void MainWindow::on_rightArrowButton_clicked()
 {
      ui->stackedWidget2->setCurrentIndex(1);
@@ -120,6 +122,7 @@ void MainWindow::on_rightArrowButton_clicked()
     }
 }
 
+// left arrow to switch picture
 void MainWindow::on_leftArrorwButton_clicked()
 {
     ui->stackedWidget2->setCurrentIndex(0);
@@ -136,7 +139,7 @@ void MainWindow::on_leftArrorwButton_clicked()
         }
 }
 
-
+// summary of the calculated prices and fees
 void MainWindow::CurrentChoice(){
     ui->taxLabel->setText("$" + QString::number(CalculateCostTax()));
     double parkingFee = 0;
@@ -151,7 +154,7 @@ void MainWindow::CurrentChoice(){
 
 }
 
-
+// move to the second page and check validations
 void MainWindow::on_nextButton_clicked()
 {
     QMessageBox warning;
@@ -173,14 +176,14 @@ void MainWindow::on_nextButton_clicked()
 }
 
 
-
+// switch back to page one
 void MainWindow::on_backButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->creditCardLineEdit->clear();
 }
 
-
+// calculate cost of the room
 double MainWindow::CalculateCost() {
     double total;
     if(GetRoomType() == 1){
@@ -195,13 +198,14 @@ double MainWindow::CalculateCost() {
     return total;
 }
 
-
+// calculate tax
 double MainWindow::CalculateCostTax(){
     double totalWithTax;
     totalWithTax = CalculateCost() * 0.15;
     return totalWithTax;
 }
 
+// hold valvue day length value
 void MainWindow::on_dateLengthSpinBox_valueChanged(int arg1)
 {
     SetNumNights(arg1);
@@ -209,6 +213,7 @@ void MainWindow::on_dateLengthSpinBox_valueChanged(int arg1)
     CurrentChoice();
 }
 
+// parking condition
 void MainWindow::on_parkingCheckBox_clicked(bool checked)
 {
     SetParkingNeeded(checked);
@@ -216,7 +221,7 @@ void MainWindow::on_parkingCheckBox_clicked(bool checked)
 
 }
 
-
+// display booking confirmation
 void MainWindow::on_confirmButton_clicked()
 {
     QString roomType, parking, creditcard, creditNumbers, lastFourDigits;
@@ -276,7 +281,7 @@ void MainWindow::on_confirmButton_clicked()
 }
 }
 
-
+// conditions for guest limit
 void MainWindow::on_guestSpinBox_valueChanged()
 {
         if (roomType == 1){
@@ -297,7 +302,7 @@ void MainWindow::on_guestSpinBox_valueChanged()
     }
 }
 
-
+// conditions for guest limit
 void MainWindow::on_childrenSpinbox_valueChanged()
 {
     if (roomType == 1){
@@ -383,7 +388,7 @@ void MainWindow::SetParkingNeeded(bool needed){
 }
 
 
-
+// load the image from source
 void MainWindow::imageInput(){
     QString standardQueenBed = ":/images/standard-queenbed.jpg";
     QString standardQueenBath = ":/images/standard-queenbath.jpg";
@@ -421,7 +426,7 @@ void MainWindow::imageInput(){
 
 }
 
-
+// exit the program
 void MainWindow::on_exitButton_clicked()
 {
     QApplication::quit();
